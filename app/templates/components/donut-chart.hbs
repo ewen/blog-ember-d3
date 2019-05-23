@@ -1,0 +1,17 @@
+{{! template-lint-disable no-invalid-interactive }}
+
+<h2>Donut Chart - Ember Binding</h2>
+
+<span class="failed-label-1">Failed: {{input value=numberFailed type="number" min="0"}}</span>
+<span class="passed-label-1">Passed: {{input value=numberPassed type="number" min="0"}}</span>
+
+<div>
+  <svg width={{width}} height={{height}}>
+    <path transform={{transform}} d={{passedArc}} class="passed-1" {{action "clickPassed"}} {{action "noop" on="mouseDown"}} />
+    <path transform={{transform}} d={{failedArc}} class="failed-1" {{action "clickFailed"}} {{action "noop" on="mouseDown"}} />
+    <text text-anchor="middle" transform={{transform}}>
+      <tspan font-size="40" font-weight="600">{{totalNumber}}</tspan>
+      <tspan font-size="16" x="0" dy="1.5em">Total</tspan>
+    </text>
+  </svg>
+</div>

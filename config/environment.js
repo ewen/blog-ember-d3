@@ -20,6 +20,10 @@ module.exports = function(environment) {
     APP: {
       // Here you can pass flags/options to your application instance
       // when it is created
+    },
+
+    'ember-d3': {
+      'only': ['d3-shape', 'd3-path', 'd3-selection']
     }
   };
 
