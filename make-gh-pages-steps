@@ -1,14 +1,14 @@
 From project root:
 git checkout gh-pages
 git reset --hard master
+# Edit environment.js and change rootURL to "/blog-ember-d3/"
 nvm use
 ember build --environment=production
-rm .editorconfig .ember-cli .eslintignore .eslintrc.js .nvmrc .template-lintrc.js .travis.yml .watchmanconfig README.md
+rm .editorconfig .ember-cli .eslintignore .eslintrc.js .nvmrc .template-lintrc.js .travis.yml .watchmanconfig README.md make-gh-pages-steps
 rm -rf app config ember-cli-build.js package-lock.json package.json public testem.js tests vendor
 mv dist/* .
 rmdir dist
 git add .
 git commit -m 'Create a GH pages view'
-git status
 git pu -f
 
